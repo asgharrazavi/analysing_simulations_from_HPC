@@ -79,7 +79,7 @@ io.saveh('analysis/tica_projections/ev0.h5',ev0)
 io.saveh('analysis/tica_projections/ev1.h5',ev1)
 print "saved all projected frames 'ev0.h5 & ev1.h5' at 'analysis/tica_projections' "
 plt.figure(figsize=(12,8))
-plt.hist2d(ev0,ev1,bins=200,norm=LogNorm())
+plt.hist2d(ev0,ev1,bins=200,norm=LogNorm(),cmap=plt.cm.jet)
 plt.savefig('analysis/tica_l%d.pdf' %tica_lag)
 print "saved tica landscape for lag time %d at 'analysis/tica_l%d.pdf' " %(tica_lag,tica_lag)
 
