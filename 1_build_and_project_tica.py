@@ -60,6 +60,7 @@ n_trajs = end_traj - start_traj + 1
 print "there are %d parameters" %n_parms
 print "there are %d trajectories in the 'analysis/parameters' folder" %n_trajs
 
+# getting tICA 
 print "Obtaining tICA object..."
 dataset1 = train(start_traj,end_traj,n_parms)
 tica.fit(dataset1)
@@ -67,6 +68,7 @@ print "first 5 tICA eigenvalues:", tica.eigenvalues_[0:5]
 tica.save('analysis/tica_l%d.h5' %tica_lag)
 print "saved tICA object: 'tica_l%d.h5'  in folder 'analysis' "  %tica_lag
 
+# projecting and ploting tICA
 tica = io.loadh('analysis/tica_l%d.h5' %tica_lag)
 dataset = project(start_traj,end_traj,n_parms,tica,tica_lag)
 ev0, ev1 = [], []
