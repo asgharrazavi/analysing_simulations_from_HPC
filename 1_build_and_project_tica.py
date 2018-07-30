@@ -49,9 +49,8 @@ def project(start_traj,end_traj,n_parms,tica,tica_lag):
         dataset.append(proj)
     return dataset
 
+# loading inputs
 tica_lag = int(sys.argv[1])
-tica = ti.tICA(n_components=None, lag_time=tica_lag)
-
 parms = np.loadtxt(sys.argv[2],dtype=str)
 n_parms = len(parms)
 start_traj = int(sys.argv[3])
@@ -62,6 +61,7 @@ print "there are %d trajectories in the 'analysis/parameters' folder" %n_trajs
 
 # getting tICA 
 print "Obtaining tICA object..."
+tica = ti.tICA(n_components=None, lag_time=tica_lag)
 dataset1 = train(start_traj,end_traj,n_parms)
 tica.fit(dataset1)
 print "first 5 tICA eigenvalues:", tica.eigenvalues_[0:5]
