@@ -52,9 +52,11 @@ def project(start_traj,end_traj,n_parms,tica,tica_lag):
 # loading inputs
 tica_lag = int(sys.argv[1])
 parms = np.loadtxt(sys.argv[2],dtype=str)
-n_parms = len(parms)
 start_traj = int(sys.argv[3])
 end_traj = int(sys.argv[4])
+
+# some info
+n_parms = len(parms)
 n_trajs = end_traj - start_traj + 1
 print "there are %d parameters" %n_parms
 print "there are %d trajectories in the 'analysis/parameters' folder" %n_trajs
