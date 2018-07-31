@@ -23,14 +23,6 @@ rcParams.update({'figure.autolayout': True})
 rcParams['axes.linewidth'] = 2
 rcParams.update({'font.size': 16})
 
-n_frames = int(sys.argv[1])
-tica_lag = int(sys.argv[2])
-pdb = sys.argv[3]
-start_traj = int(sys.argv[4])
-end_traj = int(sys.argv[5])
-traj_path = sys.argv[6]
-traj_name = sys.argv[7]
-ref = md.load(pdb)
 
 def plot_extracted_frames_locations_on_tica(stretch,tica_lag,n_frames):
     ev0 = io.loadh('analysis/tica_projections/ev0.h5')['arr_0']
@@ -83,6 +75,14 @@ def extract_frames(pdb,start_traj,end_traj,tica_lag,selected_ev0,selected_ev1,tr
     traj.save_xtc2(outname)
     print "\nInfo: saved selected frames from trajectory %d at '%s'\n" %(i,outname)
 
+n_frames = int(sys.argv[1])
+tica_lag = int(sys.argv[2])
+pdb = sys.argv[3]
+start_traj = int(sys.argv[4])
+end_traj = int(sys.argv[5])
+traj_path = sys.argv[6]
+traj_name = sys.argv[7]
+ref = md.load(pdb)
 
 selected_ev0, selected_ev1 = plot_extracted_frames_locations_on_tica(3,tica_lag,n_frames)
 extract_frames(pdb,start_traj,end_traj,tica_lag,selected_ev0,selected_ev1,traj_path,traj_name)
