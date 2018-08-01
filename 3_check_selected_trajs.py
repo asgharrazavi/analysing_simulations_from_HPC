@@ -32,7 +32,6 @@ def vmd_cal_parms(vmd_path,psf,traj):
     '''
 
     text = """%s -dispdev none %s %s <<EOF
-#animate delete  beg 0 end 0 skip 0 0
 play tk_TM3_TM4_EC.tcl
 play tk_TM3_TM6_EC.tcl
 play tk_TM4_TM6_EC.tcl
