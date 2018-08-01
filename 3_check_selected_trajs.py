@@ -29,14 +29,14 @@ rcParams.update({'font.size': 16})
 def vmd_cal_parms(vmd_path,psf,traj):
     text = """%s -dispdev none %s %s <<EOF
 #animate delete  beg 0 end 0 skip 0 0
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_TM3_TM4_EC.tcl
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_TM3_TM6_EC.tcl
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_TM4_TM6_EC.tcl
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_TM4_TM6_MID.tcl
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_t333_y439.tcl
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_e313_r432.tcl
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_e318_r432.tcl
-play /pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/analysis_tica/tcls/tk_y439_r432.tcl
+play tk_TM3_TM4_EC.tcl
+play tk_TM3_TM6_EC.tcl
+play tk_TM4_TM6_EC.tcl
+play tk_TM4_TM6_MID.tcl
+play tk_t333_y439.tcl
+play tk_e313_r432.tcl
+play tk_e318_r432.tcl
+play tk_y439_r432.tcl
 quit
 EOF
 """ %(vmd_path,psf,traj)
