@@ -69,13 +69,15 @@ psf = sys.argv[1]
 traj = sys.argv[2]
 vmd_path = sys.argv[3]
 parms = np.loadtxt(sys.argv[4],dtype=str)
-n_parms = len(parms)
 tica_lag = int(sys.argv[5])
 tica_evs = io.loadh(sys.argv[6])['components']
 ev0 = io.loadh(sys.argv[7])['arr_0']
 ev1 = io.loadh(sys.argv[8])['arr_0']
 output = sys.argv[9]
 
+n_parms = len(parms)
+
+# first calculate tICA parameters
 vmd_cal_parms(vmd_path,psf,traj)
 data = project(n_parms,tica_evs,tica_lag)
  
