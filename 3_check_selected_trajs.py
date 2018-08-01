@@ -54,9 +54,6 @@ EOF
     os.system(' mv   e318_r432.txt                selected_frames/')
     os.system(' mv   y439_r432.txt                selected_frames/')
 
-
-   
-
 def project(n_parms,tica_evs,tica_lag):
     ref1 = np.loadtxt('selected_frames/TM3_TM4_EC.txt')
     d = np.zeros((len(ref1),n_parms))
@@ -67,6 +64,7 @@ def project(n_parms,tica_evs,tica_lag):
     io.saveh('selected_frames/selected_frames_on_tica_l%d.h5' %(tica_lag), proj)
     return proj
 
+# load inputs
 psf = sys.argv[1]
 traj = sys.argv[2]
 vmd_path = sys.argv[3]
