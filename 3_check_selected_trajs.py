@@ -77,8 +77,10 @@ output = sys.argv[9]
 
 n_parms = len(parms)
 
-# first calculate tICA parameters
+# first calculate tICA parameters if not done so already
 vmd_cal_parms(vmd_path,psf,traj)
+
+# project tICA parameters on tICA eigenvectors
 data = project(n_parms,tica_evs,tica_lag)
  
 plt.figure(figsize=(20,15))
