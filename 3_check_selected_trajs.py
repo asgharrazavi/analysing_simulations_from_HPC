@@ -45,10 +45,10 @@ EOF
     f.close()
     os.system('chmod +x vmd_temp.sh')
     os.system('./vmd_temp.sh')
-    os.system(' mv   TM3_TM4_EC.txt                selected_frames/')
-    os.system(' mv   TM3_TM6_EC.txt                selected_frames/')
-    os.system(' mv   TM4_TM6_EC.txt                selected_frames/')
-    os.system(' mv   TM4_TM6_MID.txt                selected_frames/')
+    os.system(' mv   TM3_TM4_EC.txt               selected_frames/')
+    os.system(' mv   TM3_TM6_EC.txt               selected_frames/')
+    os.system(' mv   TM4_TM6_EC.txt               selected_frames/')
+    os.system(' mv   TM4_TM6_MID.txt              selected_frames/')
     os.system(' mv   t333_y439.txt                selected_frames/')
     os.system(' mv   e313_r432.txt                selected_frames/')
     os.system(' mv   e318_r432.txt                selected_frames/')
@@ -75,12 +75,12 @@ ev0 = io.loadh(sys.argv[7])['arr_0']
 ev1 = io.loadh(sys.argv[8])['arr_0']
 output = sys.argv[9]
 
-n_parms = len(parms)
 
-# first calculate tICA parameters if not done so already
+# first calculate tICA parameters 
 vmd_cal_parms(vmd_path,psf,traj)
 
 # project tICA parameters on tICA eigenvectors
+n_parms = len(parms)
 data = project(n_parms,tica_evs,tica_lag)
  
 # plot and save tICA landscape
