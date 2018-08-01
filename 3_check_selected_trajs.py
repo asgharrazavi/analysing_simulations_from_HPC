@@ -83,11 +83,12 @@ vmd_cal_parms(vmd_path,psf,traj)
 # project tICA parameters on tICA eigenvectors
 data = project(n_parms,tica_evs,tica_lag)
  
+# plot and save tICA landscape
 plt.figure(figsize=(20,15))
-plt.hist2d(ev0,ev1,bins=200,norm=LogNorm())
+plt.hist2d(ev0,ev1,bins=200,norm=LogNorm(),cmap=plt.cmap.jet)
 plt.plot(data[:,0],data[:,1],'ro',markersize=12)
 plt.xlabel('tIC 1')
 plt.ylabel('tIC 2')
-plt.savefig('/pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/%s' %output)
-print "Saved %s" %('/pbtech_mounts/hwlab_store_athena/khelgeo/tmem/md_simulations/tica_analysis/WT/%s' %output)
+plt.savefig('%s' %output)
+print "Saved %s" %('%s' %output)
 
