@@ -48,6 +48,8 @@ EOF
     f.close()
     os.system('chmod +x vmd_temp.sh')
     os.system('./vmd_temp.sh')
+    if not os.path.exists('./selected_frames'):
+	os.system('mkdir selected_frames')
     os.system(' mv   TM3_TM4_EC.txt               selected_frames/')
     os.system(' mv   TM3_TM6_EC.txt               selected_frames/')
     os.system(' mv   TM4_TM6_EC.txt               selected_frames/')
