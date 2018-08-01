@@ -27,6 +27,10 @@ rcParams.update({'font.size': 16})
 
 
 def vmd_cal_parms(vmd_path,psf,traj):
+    '''
+    This function calculates tICA parameters for an MD simulation trajectory using VMD software
+    '''
+
     text = """%s -dispdev none %s %s <<EOF
 #animate delete  beg 0 end 0 skip 0 0
 play tk_TM3_TM4_EC.tcl
