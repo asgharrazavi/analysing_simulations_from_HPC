@@ -13,6 +13,7 @@ import numpy as np
 from msmbuilder.cluster import KMeans, KCenters
 import mdtraj.io as io
 import matplotlib
+# to be able to plot figures on HPC
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
