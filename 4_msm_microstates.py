@@ -42,7 +42,6 @@ def cluster():
     print "Saved microstate assignments and microstate centers at %s" %out_path
     return cluster.cluster_centers_, np.array(ev0), np.array(ev1)
 
-
 def plot_gens_on_tICA(ev0, ev1, cluster_centers):
     plt.figure(figsize=(20,15))
     plt.hist2d(ev0,ev1,bins=200,norm=LogNorm())
