@@ -9,6 +9,7 @@ if len(sys.argv) < 5:
 6. path to save the results        
 """ %(sys.argv[0])
     sys.exit(True)
+
 import numpy as np
 from msmbuilder.cluster import KMeans, KCenters
 import mdtraj.io as io
