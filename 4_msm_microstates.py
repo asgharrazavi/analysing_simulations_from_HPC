@@ -27,7 +27,8 @@ from tqdm import tqdm
 
 def cluster():
     '''
-    This function perfomes K-means clustering on the tICA space.
+    This function perfomes K-means clustering on the tICA space and saves assignsment files for each trajectory.
+    Cluster centers are also saved at `microstate_centers.txt` file.
     '''
     cluster = KMeans(n_clusters=n_states,n_jobs=-1,verbose=0, max_iter=100, tol=0.0001,)
     dataset, ev0, ev1 = [], [], []
