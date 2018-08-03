@@ -43,6 +43,7 @@ play tk_y439_r432.tcl
 quit
 EOF
 """ %(vmd_path,psf,traj)
+
     f = open('vmd_temp.sh','w')
     f.writelines(text)
     f.close()
@@ -60,7 +61,7 @@ EOF
     os.system(' mv   y439_r432.txt                selected_frames/')
 
 def project(n_parms,tica_evs,tica_lag):
-    ref1 = np.loadtxt('selected_frames/TM3_TM4_EC.txt')
+    ref1 = np.loadtxt('selected_frames/%s.txt' %parms[0])
     d = np.zeros((len(ref1),n_parms))
     for p in range(n_parms):
         data = np.loadtxt('selected_frames/%s.txt' %(parms[p]))
