@@ -23,14 +23,6 @@ rcParams['axes.linewidth'] = 2
 rcParams.update({'font.size': 16})
 from tqdm import tqdm
 
-proj_path = sys.argv[1]
-n_states = int(sys.argv[2])
-traj_name = sys.argv[3]
-start_traj = int(sys.argv[4])
-end_traj = int(sys.argv[5])
-out_path = sys.argv[6]
-if not os.path.exists(out_path): os.system('mkdir %s' %out_path)
-
 
 def cluster():
     cluster = KMeans(n_clusters=n_states,n_jobs=-1,verbose=0, max_iter=100, tol=0.0001,)
@@ -62,6 +54,14 @@ def plot_gens_on_tICA(ev0, ev1, cluster_centers):
     plt.title('Microstate centers on tICA')
     plt.savefig('%s/microstates_on_tICA.pdf' %(out_path))
     print "Plotted microstate centers on tICA space at %s" %out_path
+
+proj_path = sys.argv[1]
+n_states = int(sys.argv[2])
+traj_name = sys.argv[3]
+start_traj = int(sys.argv[4])
+end_traj = int(sys.argv[5])
+out_path = sys.argv[6]
+if not os.path.exists(out_path): os.system('mkdir %s' %out_path)
 
 cluster_centers, ev0, ev1 = cluster()
 plot_gens_on_tICA(ev0, ev1, cluster_centers)
