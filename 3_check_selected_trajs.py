@@ -80,7 +80,6 @@ ev0 = io.loadh(sys.argv[7])['arr_0']
 ev1 = io.loadh(sys.argv[8])['arr_0']
 output = sys.argv[9]
 
-
 # first calculate tICA parameters 
 vmd_cal_parms(vmd_path,psf,traj)
 
