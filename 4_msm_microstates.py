@@ -55,6 +55,7 @@ def plot_gens_on_tICA(ev0, ev1, cluster_centers):
     plt.savefig('%s/microstates_on_tICA.pdf' %(out_path))
     print "Plotted microstate centers on tICA space at %s" %out_path
 
+# load inputs
 proj_path = sys.argv[1]
 n_states = int(sys.argv[2])
 traj_name = sys.argv[3]
