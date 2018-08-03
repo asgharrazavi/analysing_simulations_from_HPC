@@ -62,9 +62,13 @@ traj_name = sys.argv[3]
 start_traj = int(sys.argv[4])
 end_traj = int(sys.argv[5])
 out_path = sys.argv[6]
+
 if not os.path.exists(out_path): os.system('mkdir %s' %out_path)
 
+# cluster data
 cluster_centers, ev0, ev1 = cluster()
+
+# project and plot data and cluster centers on tICA landscape
 plot_gens_on_tICA(ev0, ev1, cluster_centers)
 
 
