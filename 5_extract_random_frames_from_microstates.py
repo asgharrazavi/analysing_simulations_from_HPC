@@ -17,6 +17,7 @@ import mdtraj.io as io
 import mdtraj as md
 from tqdm import tqdm
 
+# load inputs
 micro_id = int(sys.argv[1])
 name = sys.argv[2]
 start_traj = int(sys.argv[3])
