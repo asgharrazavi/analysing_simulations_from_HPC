@@ -17,6 +17,7 @@ import mdtraj.io as io
 import mdtraj as md
 from tqdm import tqdm
 
+
 def get_phases(idd):
     xtcs = glob.glob('%s/%d/%s_*.xtc' %(traj_path,idd,traj_name))
     nn = np.array([int(xtc.split('.xtc')[0].split('_')[-1]) for xtc in xtcs])
@@ -24,7 +25,6 @@ def get_phases(idd):
     start_phase = np.min(nn)
     print "\nTrajectory %d has %d phases and starting phase is %d" %(idd,n_phases,start_phase)
     return n_phases, start_phase
-
 
 def extract(micro_id,start_traj,end_traj):
     n_phases, start_phase = get_phases(start_traj)
