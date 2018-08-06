@@ -53,9 +53,9 @@ def extract(micro_id,start_traj,end_traj):
         map2 = np.array(map2)
         selected_phases = map2[:,0][ind2] + start_phase
         selected_frames = map2[:,1][ind2]
-        for ii in range(len(selected_phases)): print "\tselected frames for phase: %d --> " %selected_phases[ii], selected_frames[ii]
 
  	for ii in range(len(selected_phases)):
+	    print "\tselected frames for phase: %d --> " %selected_phases[ii], selected_frames[ii]
 	    traj = md.load('%s/%d/%s_%d.xtc' %(traj_path,i,traj_name,selected_phases[ii]),top=ref)
 	    xyz2 = np.zeros((1,traj.xyz.shape[1],3))
  	    try : xyz2[0] = traj.xyz[selected_frames[ii],:,:]
