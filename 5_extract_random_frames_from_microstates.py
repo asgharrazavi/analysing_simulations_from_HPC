@@ -17,20 +17,6 @@ import mdtraj.io as io
 import mdtraj as md
 from tqdm import tqdm
 
-# load inputs
-micro_id = int(sys.argv[1])
-name = sys.argv[2]
-start_traj = int(sys.argv[3])
-end_traj = int(sys.argv[4])
-assign_path = sys.argv[5]
-out_path = sys.argv[6]
-ref_path = sys.argv[7]
-traj_path = sys.argv[8]
-traj_name = sys.argv[9]
-if not os.path.exists(out_path): os.system('mkdir %s' %out_path)
-
-ref = md.load(ref_path)
-
 def get_phases(idd):
     xtcs = glob.glob('%s/%d/%s_*.xtc' %(traj_path,idd,traj_name))
     nn = np.array([int(xtc.split('.xtc')[0].split('_')[-1]) for xtc in xtcs])
@@ -80,6 +66,20 @@ def extract(micro_id,start_traj,end_traj):
     traj.xyz = xyz[1:,:,:]
     traj.save_xtc2('%s/selected_snapshots_for_microstate_%d.xtc' %(out_path,micro_id))
 	
+
+# load inputs
+micro_id = int(sys.argv[1])
+name = sys.argv[2]
+start_traj = int(sys.argv[3])
+end_traj = int(sys.argv[4])
+assign_path = sys.argv[5]
+out_path = sys.argv[6]
+ref_path = sys.argv[7]
+traj_path = sys.argv[8]
+traj_name = sys.argv[9]
+if not os.path.exists(out_path): os.system('mkdir %s' %out_path)
+
+ref = md.load(ref_path)
 
         
 
