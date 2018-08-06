@@ -36,11 +36,14 @@ def extract(micro_id,start_traj,end_traj):
   	map = np.loadtxt('%s/analysis_tica/analysis/%d/analysis/traj_%d_%s.txt' %(traj_path,i,i,name))
         if micro_id not in assign: continue
 	ind = np.where(assign == micro_id)[0]
+
+	# try not to save all snapshots
 	if len(ind) > 1000: ind2 = np.random.choice(ind,20) 
 	elif len(ind) > 100 and len(ind) < 1000: ind2 = np.random.choice(ind,10) 
 	elif len(ind) > 10 and len(ind) < 100: ind2 = np.random.choice(ind,5) 
 	elif len(ind) < 10: ind2 = np.random.choice(ind,5) 
         print "\n%d frames are selected from traj %d" %(len(ind2),i)
+
 	phase_frame = []
         map2 = []
   	ii = 0
@@ -82,3 +85,5 @@ if not os.path.exists(out_path): os.system('mkdir %s' %out_path)
 # extract random snapshots
 ref = md.load(ref_path)
 extract(micro_id,start_traj,end_traj)
+
+
