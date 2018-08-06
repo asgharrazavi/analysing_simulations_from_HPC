@@ -28,8 +28,6 @@ def get_phases(idd):
 
 def extract(micro_id,start_traj,end_traj):
     n_phases, start_phase = get_phases(start_traj)
-#    traj = md.load('%s/%d/%s_%d.xtc' %(traj_path,start_traj,traj_name,start_phase),top=ref)
-#    xyz = traj.xyz[0:2,:,:]
     for i in range(start_traj,end_traj+1):
         n_phases, start_phase = get_phases(i)
  	assign = np.loadtxt('%s/assigns_%d.txt' %(assign_path,i),dtype=int)
