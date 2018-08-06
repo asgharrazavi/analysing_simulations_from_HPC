@@ -35,7 +35,7 @@ def extract(micro_id,start_traj,end_traj):
         if micro_id not in assign: continue
 	ind = np.where(assign == micro_id)[0]
 
-	# try not to save all snapshots
+	# find frames but try not to save all snapshots
 	if len(ind) > 1000: ind2 = np.random.choice(ind,20) 
 	elif len(ind) > 100 and len(ind) < 1000: ind2 = np.random.choice(ind,10) 
 	elif len(ind) > 10 and len(ind) < 100: ind2 = np.random.choice(ind,5) 
@@ -55,6 +55,7 @@ def extract(micro_id,start_traj,end_traj):
         selected_phases = map2[:,0][ind2] + start_phase
         selected_frames = map2[:,1][ind2]
 
+	# extract frames
  	for ii in range(len(selected_phases)):
 	    print "\tselected frames for phase: %d --> " %selected_phases[ii], selected_frames[ii]
 	    traj = md.load('%s/%d/%s_%d.xtc' %(traj_path,i,traj_name,selected_phases[ii]),top=ref)
@@ -66,7 +67,7 @@ def extract(micro_id,start_traj,end_traj):
 
     print "\nTotal number of snapshots saved for microstate %d is: %d" %(micro_id,xyz.shape[0])
 
-    # save selected snapshots
+    # save extracted frames
     traj.xyz = xyz[1:,:,:]
     traj.save_xtc2('%s/selected_snapshots_for_microstate_%d.xtc' %(out_path,micro_id))
 
