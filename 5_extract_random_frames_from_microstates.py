@@ -2,14 +2,14 @@ import os,sys,glob
 if len(sys.argv) < 5:
     print """\nThe %s script needs following inputs:
 1. Id of the microstate to extract frames from (zero based)
-2. generic name of the mapping file (Ex. 'number_of_phases_frames' in traj_40_number_of_phases_frames.txt)
+2. generic name of the mapping file (e.g. 'number_of_phases_frames' in traj_40_number_of_phases_frames.txt)
 3. start trajectory number
 4. end trajectory number
 5. path to assignment files
 6. path to save the results        
 7. reference pdb file
 8. path to trajectories
-9. generic name of trajectories  (Ex. leuT_phase4)
+9. generic name of trajectories  (e.g. leuT_phase4)
 """ %(sys.argv[0])
     sys.exit(True)
 import numpy as np
