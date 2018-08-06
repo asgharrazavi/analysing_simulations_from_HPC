@@ -76,10 +76,9 @@ out_path = sys.argv[6]
 ref_path = sys.argv[7]
 traj_path = sys.argv[8]
 traj_name = sys.argv[9]
+
 if not os.path.exists(out_path): os.system('mkdir %s' %out_path)
 
+# extract random snapshots
 ref = md.load(ref_path)
-
-        
-
 extract(micro_id,start_traj,end_traj)
