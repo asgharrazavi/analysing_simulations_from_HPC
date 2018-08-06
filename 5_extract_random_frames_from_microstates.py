@@ -47,7 +47,6 @@ def extract(micro_id,start_traj,end_traj):
         try: n_ppp = len(map) 
         except: map = [map]
         for j in range(len(map)):
-#        for j in range(len(map)):
 	    for k in range(int(map[j])):
 	 	map2.append([j,k]) 
         map2 = np.array(map2)
