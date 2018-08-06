@@ -70,6 +70,7 @@ def extract(micro_id,start_traj,end_traj):
     # save extracted frames
     traj.xyz = xyz[1:,:,:]
     traj.save_xtc2('%s/selected_snapshots_for_microstate_%d.xtc' %(out_path,micro_id))
+    print "Saved snapshots for state %d at: %s/selected_snapshots_for_microstate_%d.xtc" %(micro_id,out_path,micro_id)
 
 	
 
