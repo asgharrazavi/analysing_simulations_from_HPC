@@ -42,6 +42,7 @@ def extract(micro_id,start_traj,end_traj):
 	elif len(ind) < 10: ind2 = np.random.choice(ind,5) 
         print "\n%d frames are selected from traj %d" %(len(ind2),i)
 
+	# map selected frames to trajectory phases
 	phase_frame = []
         map2 = []
   	ii = 0
@@ -62,9 +63,13 @@ def extract(micro_id,start_traj,end_traj):
  	    except : xyz2 = traj.xyz[selected_frames[ii],:,:]
 	    try: xyz = np.concatenate((xyz,xyz2),axis=0)
 	    except: xyz = xyz2
+
     print "\nTotal number of snapshots saved for microstate %d is: %d" %(micro_id,xyz.shape[0])
+
+    # save selected snapshots
     traj.xyz = xyz[1:,:,:]
     traj.save_xtc2('%s/selected_snapshots_for_microstate_%d.xtc' %(out_path,micro_id))
+
 	
 
 # load inputs
