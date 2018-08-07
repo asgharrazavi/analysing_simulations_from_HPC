@@ -3,7 +3,7 @@ if len(sys.argv) < 5:
     print """\nThe %s script needs following inputs:
 1. path to projections on tica
 2. number of microstates
-3. generic name of tica projection files (Ex. 'on_tica_l20' in traj56_on_tica_l20.h5)
+3. generic name of tica projection files (e.g. 'on_tica_l20' in traj56_on_tica_l20.h5)
 4. start trajectory number
 5. end trajectory number
 6. path to save the results        
