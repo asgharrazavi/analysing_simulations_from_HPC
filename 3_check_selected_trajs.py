@@ -9,7 +9,7 @@ if len(sys.argv) < 10:
 \t6. tica file
 \t7. ev0.h5
 \t8. ev1.h5
-\t9. output (Ex. output.png)
+\t9. output (e.g. output.png)
 """ %sys.argv[0]
     quit()
 
