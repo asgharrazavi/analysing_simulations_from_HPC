@@ -17,9 +17,6 @@ rcParams['axes.linewidth'] = 2
 rcParams.update({'font.size': 20})
 
 
-tica = io.loadh(sys.argv[1])
-parms = np.loadtxt(sys.argv[2],dtype=str)
-
 def plot_evs():
     evs = tica['vecs']
     plt.figure(figsize=(20,7))
@@ -68,6 +65,10 @@ def plot_contributions():
     plt.savefig('analysis/tICA_contributions.pdf',dpi=100)
     print "\nSaved analysis/tICA_contributions.pdf\n"
 
+
+# load inputs
+tica = io.loadh(sys.argv[1])
+parms = np.loadtxt(sys.argv[2],dtype=str)
 
 plot_evs()
 plot_vals()
