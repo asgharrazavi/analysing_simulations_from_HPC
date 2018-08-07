@@ -70,6 +70,9 @@ def plot_contributions():
 tica = io.loadh(sys.argv[1])
 parms = np.loadtxt(sys.argv[2],dtype=str)
 
+# plot tICA eigenvalues
 plot_evs()
+
+# plot tICA eigenvectors
 plot_vals()
 plot_contributions()
