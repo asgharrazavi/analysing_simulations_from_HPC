@@ -75,4 +75,6 @@ plot_evs()
 
 # plot tICA eigenvectors
 plot_vals()
+
+# plot contribution of each tICA eigenvector to total dynamics
 plot_contributions()
