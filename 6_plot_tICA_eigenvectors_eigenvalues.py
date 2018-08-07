@@ -1,7 +1,7 @@
 import os,sys
 if len(sys.argv) < 3:
     print """\nThe script %s needs these inputs:
-\t1. tICA file (Ex. tICA_l20.h5)
+\t1. tICA file (e.g. tICA_l20.h5)
 \t2. parameter file (e.g. parameters.txt)
 """ %(sys.argv[0])
     sys.exit(True) 
