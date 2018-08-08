@@ -51,12 +51,12 @@ def project(start_traj,end_traj,n_parms,tica,tica_lag):
 
 # load inputs
 tica_lag = int(sys.argv[1])
-tica = ti.tICA(n_components=None, lag_time=tica_lag)
 parms = np.loadtxt(sys.argv[2],dtype=str)
 start_traj = int(sys.argv[3])
 end_traj = int(sys.argv[4])
 
 
+tica = ti.tICA(n_components=None, lag_time=tica_lag)
 n_parms = len(parms)
 n_trajs = end_traj - start_traj + 1
 print "there are %d parameters" %n_parms
