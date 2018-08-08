@@ -70,6 +70,7 @@ print "first 5 tICA eigenvalues:", tica.eigenvalues_[0:5]
 tica.save('analysis/tica_l%d.h5' %tica_lag)
 print "saved tICA object: 'tica_l%d.h5'  in folder 'analysis' "  %tica_lag
 
+# project simulations on tICA eigenvectors to obtain tICA landscape
 tica = io.loadh('analysis/tica_l%d.h5' %tica_lag)
 dataset = project(start_traj,end_traj,n_parms,tica,tica_lag)
 ev0, ev1 = [], []
