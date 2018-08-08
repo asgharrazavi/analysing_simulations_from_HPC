@@ -55,6 +55,7 @@ parms = np.loadtxt(sys.argv[2],dtype=str)
 start_traj = int(sys.argv[3])
 end_traj = int(sys.argv[4])
 
+# information about tICA parameters and simulation trajectories
 n_parms = len(parms)
 n_trajs = end_traj - start_traj + 1
 print "there are %d parameters" %n_parms
