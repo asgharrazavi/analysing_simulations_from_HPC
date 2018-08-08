@@ -49,6 +49,7 @@ def project(start_traj,end_traj,n_parms,tica,tica_lag):
         dataset.append(proj)
     return dataset
 
+
 tica_lag = int(sys.argv[1])
 tica = ti.tICA(n_components=None, lag_time=tica_lag)
 
