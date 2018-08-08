@@ -81,6 +81,8 @@ ev0, ev1 = np.array(ev0), np.array(ev1)
 io.saveh('analysis/tica_projections/ev0.h5',ev0)
 io.saveh('analysis/tica_projections/ev4.h5',ev1)
 print "saved all projected frames: 'ev0.h5 & ev4.h5' at 'analysis/tica_projections' "
+
+# plot tICA landscape
 plt.figure(figsize=(12,8))
 plt.hist2d(ev0,ev1,bins=200,norm=LogNorm())
 plt.savefig('analysis/tica_l%d_1_5.png' %tica_lag)
