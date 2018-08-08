@@ -6,7 +6,7 @@ if len(sys.argv) < 5:
 \t3. start trajectory number
 \t4. end trajectory number
 """%(sys.argv[0])
-    
+   sys.exit(True)    
 
 import h5py
 import mdtraj.io as io
