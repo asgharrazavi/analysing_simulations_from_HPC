@@ -11,6 +11,7 @@ if len(sys.argv) < 5:
 import h5py
 import mdtraj.io as io
 import matplotlib
+# disable this if using local computer
 matplotlib.use('Agg')
 import msmbuilder.decomposition.tica as ti
 import numpy as np
