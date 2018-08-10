@@ -16,6 +16,7 @@ if len(sys.argv) < 10:
 import numpy as np
 import mdtraj as md
 import matplotlib
+# for plotting on HPC, remove it if using local computer
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
