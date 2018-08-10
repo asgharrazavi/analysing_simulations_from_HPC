@@ -11,6 +11,7 @@ if len(sys.argv) < 5:
 import h5py
 import mdtraj.io as io
 import matplotlib
+# for HPC use only
 matplotlib.use('Agg')
 import msmbuilder.decomposition.tica as ti
 import numpy as np
