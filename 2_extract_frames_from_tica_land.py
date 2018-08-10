@@ -15,6 +15,7 @@ import mdtraj as md
 import numpy as np
 import mdtraj.io as io
 import matplotlib
+# for HPC use only
 matplotlib.use('Agg')
 from matplotlib.colors import LogNorm
 import matplotlib.pyplot as plt
