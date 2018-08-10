@@ -9,6 +9,7 @@ if len(sys.argv) < 3:
 import numpy as np
 import mdtraj.io as io
 import matplotlib
+# comment out the below line if using local computer
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
