@@ -37,7 +37,8 @@ def train(start_traj,end_traj,n_parms):
 
 def project(start_traj,end_traj,n_parms,tica,tica_lag):
     dataset = []
-    if not os.path.exists('analysis/tica_projections') : os.system('mkdir analysis/tica_projections')
+    if not os.path.exists('analysis/tica_projections') : 
+        os.system('mkdir analysis/tica_projections')
     for i in range(start_traj,end_traj+1):
 	ref1 = np.loadtxt('analysis/%d/analysis/parameters/%s.txt' %(i,parms[0]))
     	d = np.zeros((len(ref1),n_parms))
